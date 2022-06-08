@@ -6,4 +6,8 @@ A papíralapú vezetés és annak leadása nem eredményez percre pontos adatbá
 
 Ma már mindenkinél található egy okostelefon mobilinternet kapcsolattal, amivel akár a fogás után rövid időn belül pár gombnyomással gyorsan és könnyedén le is lehet jelenteni a fogott és hazavinni kívánt halat. Így az adatbázis percre pontos lehet és a halőrök távolról is meg tudják figyelni, hogy a kifogott hal lejelentésre került-e.
 
+3 fős csapat:
+Mobil alkalmazás: https://github.com/kovacsfruzsina
+Desktop alkalmazás: https://github.com/Szekeres-Daniel
+
 ![Projekt](https://user-images.githubusercontent.com/77957099/161478727-19f11223-c8a7-430e-8160-0bc542f24a51.jpg)
