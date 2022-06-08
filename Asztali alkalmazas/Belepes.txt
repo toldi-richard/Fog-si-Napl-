@@ -1,0 +1,2 @@
+AZ: 10000
+Jelszo: admin1987

@@ -1,0 +1,38 @@
+.List {
+    padding: 0px !important;
+}
+
+.BackButton{
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-family:'Montserrat', sans-serif !important;
+    border-radius: 0px !important;
+}
+
+.Footer{
+    background-color: white;
+    height: 10%;
+    opacity: 90%;
+    border-radius: 0px !important;
+}
+
+.ListItem {
+    border-radius: 0px !important;
+}
+
+.Avatar {
+    width: 20% !important;
+    height: 20% !important;
+    transition: transform .2s;
+
+}
+
+.Avatar:hover {
+    transform: scale(1.2);
+}
+
+.PostPageButton{
+    padding: 5px;
+    margin-top: 18px !important;
+    cursor: pointer;
+}

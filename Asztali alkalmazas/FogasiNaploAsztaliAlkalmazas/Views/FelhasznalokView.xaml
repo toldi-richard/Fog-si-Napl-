@@ -1,0 +1,257 @@
+﻿<Window x:Class="FogasiNaploAsztaliAlkalmazas.Views.FelhasznalokView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FogasiNaploAsztaliAlkalmazas.Views"
+             xmlns:vm="clr-namespace:FogasiNaploAsztaliAlkalmazas.ViewModels"
+             mc:Ignorable="d" Title="Fogási napló"
+             Height="500" Width="850"  WindowStartupLocation="CenterScreen"  
+             Background="White" Visibility="Visible" Icon="/Images/Icon.png"  WindowStyle="None" 
+        BorderBrush="Black" BorderThickness="0.5"
+        MouseDown="Window_MouseDown" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" MinWidth="580" MinHeight="350" MouseMove="Window_MouseMove">
+
+    <Window.DataContext>
+        <vm:FelhasznalokViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+    
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="15"/>
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush  Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0"
+            Content="Felhasználók"
+               FontSize="28"
+               HorizontalAlignment="Center" Background="White" FontWeight="Bold"/>
+        <Button Width="30" Height="30" HorizontalAlignment="Left" Click="ChangeContentButton_Click" ToolTip="Fogások megjelenítése" 
+                VerticalAlignment="Bottom" Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
+            <Image Source="/Images/Diary.png" Width="25" Height="25" Cursor="Hand" Stretch="UniformToFill"  />
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+
+            </Button.Resources>
+        </Button>
+
+
+        <Expander Grid.Row="1" Header="Felhasználó adatai" Background="White" Padding="2,0,0,0" 
+                  FontWeight="SemiBold" FontSize="13" ToolTip="Felhasználó adatai">
+            <Grid>
+                <Grid.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="FontSize" Value="13" />
+                    </Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="Width" Value="300" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+                        <Setter Property="Margin" Value="2" />
+                    </Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Width" Value="100" />
+                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                        <Setter Property="Margin" Value="2" />
+                    </Style>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="110"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="Email cím: " Grid.Row="0" Grid.Column="0"/>
+                <TextBox Text="{Binding SelectedFelhasznalo.email_cim}" Grid.Row="0" Grid.Column="1" Width="145"/>
+                <Label Content="Azonosító: " Grid.Row="1" Grid.Column="0" />
+                <TextBox Text="{Binding SelectedFelhasznalo.azonosito}" Grid.Row="1" Grid.Column="1" Width="145"/>
+                <Label Content="Jelszó: " Grid.Row="2" Grid.Column="0" />
+                <TextBox Text="{Binding SelectedFelhasznalo.jelszo}" Grid.Row="2" Grid.Column="1" Width="145" />
+                <Label Content="Szerepkör kód: " Grid.Row="3" Grid.Column="0"/>
+                <TextBox Text="{Binding SelectedFelhasznalo.szerepkorID}" Grid.Row="3" Grid.Column="1" Width="145"/>
+                <Label Content="Szerepkör: " Grid.Row="4" Grid.Column="0"/>
+
+                <TextBox Text="{Binding SelectedFelhasznalo.szerepkor.szerepkor_megnev}" Grid.Row="4" Grid.Column="1" Width="145" IsEnabled="False"/>
+                <Label Content="Fogások száma:" Grid.Row="5" Grid.Column="0" />
+                <Label x:Name="SelectedFogasokSzama" Content="{Binding SelectedFelhasznalo.fogasok.Count}" Grid.Row="5" Grid.Column="1" />
+
+
+                <Button Grid.Row="0" Grid.Column="3" Command="{Binding NewCmd}" Width="25" ToolTip="Új felhasználó létrehozása"
+                        BorderBrush="Transparent" BorderThickness="0" Background="Transparent">
+                    <Image Source="/Images/Add.png" Width="25" Height="25" Cursor="Hand" Stretch="UniformToFill"  />
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button  Grid.Row="1" Grid.Column="3" Command="{Binding SaveCmd}" Width="25" ToolTip="Mentés" BorderBrush="Transparent"
+                         BorderThickness="0" Background="Transparent" Padding="0">
+                    <Image Source="/Images/Save.png" Width="25" Height="25" Cursor="Hand" Stretch="UniformToFill"/>
+
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="DeleteBtn" Grid.Row="2" Grid.Column="3" Command="{Binding DeleteCmd}" Height="25"
+                         Width="25" ToolTip="Törlés" BorderBrush="Transparent"
+                         BorderThickness="0" Background="Transparent">
+                    <Image Source="/Images/Delete.png" Width="25" Height="25" Cursor="Hand" Stretch="UniformToFill"/>
+
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Label x:Name="TorlesTiltott" Content="A törlés nem engedélyezett!" Grid.Column="3" Grid.Row="3" BorderBrush="Black" Foreground="Red" Visibility="Hidden"  >
+                    <Label.Background>
+                        <ImageBrush/>
+                    </Label.Background>
+                </Label>
+            </Grid>
+        </Expander>
+
+        <Grid Grid.Row="2" Margin="5" Background="White">
+            <StackPanel Orientation="Horizontal" Background="White" Height="22">
+                <TextBlock Text="Összesen " Background="White"/>
+                <TextBlock Text="{Binding TotalItems}" Background="White" FontWeight="Bold"/>
+                <TextBlock Text=" felhasználó van megjelenítve." Background="White" />
+                <TextBlock Text=" Egy oldalon " Background="White" />
+                <ComboBox Width="50" ItemsSource="{Binding ItemsPerPageList}" ToolTip="Kérem válasszon!"
+                          SelectedItem="{Binding ItemsPerPage}" Background="White" />
+                <TextBlock Text=" elem jelenik meg." Background="White"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right" Background="White">
+                <TextBox Width="100" Text="{Binding SearchKey}" Margin="0,0,10,0" Background="White" Height="22">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <Button  Command="{Binding LoadDataCmd}" Background="Transparent" BorderBrush="Transparent" 
+                         BorderThickness="0" Width="25" Height="25" Padding="-2,-2,2,2" VerticalAlignment="Center" ToolTip="Keresés">
+                    <Image Source="/Images/Search.png" Width="25" Height="25" Stretch="UniformToFill"/>
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <DataGrid Grid.Row="3" 
+                  ItemsSource="{Binding Felhasznalok}" SelectedItem="{Binding SelectedFelhasznalo}"
+                  AutoGenerateColumns="False"
+                  ColumnWidth="*"
+                  Sorting="DataGrid_Sorting"
+                  CanUserAddRows="False" CanUserDeleteRows="False"
+                  IsReadOnly="True" SelectionMode="Single" BorderBrush="LightGray" FontSize="13" FontWeight="SemiBold"   >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Azonosító"  Binding="{Binding azonosito}"/>
+                <DataGridTextColumn Header="Email cím" Binding="{Binding email_cim}" />
+                <DataGridTextColumn Header="SzerepkörID" Binding="{Binding szerepkorID}" />
+                <DataGridTextColumn Header="Szerepkör neve" Binding="{Binding szerepkor.szerepkor_megnev}" />
+                <DataGridTextColumn Header="Jelszó"  Binding="{Binding jelszo}"/>
+                <DataGridTextColumn x:Name="Fogasok_Szama" Header="Lejelentett fogások száma" Binding="{Binding fogasok.Count}" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="4" Margin="0,5" Background="White" Width="Auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button  Grid.Column="0" Command="{Binding FirstPageCmd}" Width="20" BorderBrush="Transparent" 
+                     BorderThickness="0" Background="Transparent" ToolTip="Ugrás az első oldalra">
+
+                <Image Source="/Images/First.png" Width="20" Height="20"/>
+
+            </Button>
+            <Button  Grid.Column="1" Command="{Binding PreviousPageCmd}" Width="20" BorderBrush="Transparent" 
+                     BorderThickness="0" Background="Transparent" ToolTip="Előző oldal">
+
+                <Image Source="/Images/Back.png" Width="20" Height="20"/>
+
+            </Button>
+            <TextBlock Text="{Binding CurrentPage}" Grid.Column="2" HorizontalAlignment="Center" 
+                       Background="White" FontWeight="Bold" FontSize="13" />
+            <Button  Grid.Column="3" Command="{Binding NextPageCmd}" Width="20" BorderBrush="Transparent" 
+                     BorderThickness="0" Background="Transparent" ToolTip="Következő oldal">
+
+                <Image Source="/Images/Next.png" Width="20" Height="20"/>
+
+            </Button>
+            <Button  Grid.Column="4" Command="{Binding LastPageCmd}" Width="20" BorderBrush="Transparent" 
+                     BorderThickness="0" Background="Transparent" ToolTip="Ugrás az utolsó oldalra">
+
+                <Image Source="/Images/Last.png" Width="20" Height="20"/>
+
+            </Button>
+        </Grid>
+        <Button Width="30" Height="30" HorizontalAlignment="Right" Click="LogOutClick" ToolTip="Kijelentkezés" 
+                VerticalAlignment="Bottom" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Margin="0,0,2,2">
+            <Image Source="/Images/LogOut.png" Width="25" Height="25" Cursor="Hand" Stretch="UniformToFill"  />
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+
+            </Button.Resources>
+        </Button>
+        <Button  HorizontalAlignment="Right"  VerticalAlignment="Top" ToolTip="Kilépés"  Width="15"  Margin="0,3,5,0"
+                 Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Click="ExitBtn_Click" Padding="-2">
+            <Image Source="/Images/Exit.png" Stretch="Fill" Width="15" Height="15"/>
+        </Button>
+        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="15" ToolTip="Tálcára helyezés"  Margin="0,3,45,0"
+                Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Click="MinimizeBtn_Click" Padding="-2">
+            <Image Source="/Images/Minimize.png" Stretch="Fill" Width="15" Height="15"/>
+        </Button>
+        <Button x:Name="MaximizeBtn" MouseEnter="MaximizeBtn_MouseEnter"  HorizontalAlignment="Right" VerticalAlignment="Top" Width="15" Margin="0,3,25,0"
+                 Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Click="MaximizeBtn_Click" Padding="-2" ToolTip="Teljes méret">
+            <Image Source="/Images/Maximize.png" Stretch="Fill" Width="15" Height="15"/>
+        </Button>
+    </Grid>
+</Window>

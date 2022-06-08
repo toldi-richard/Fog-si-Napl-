@@ -1,0 +1,32 @@
+Felhasználók:
+FelhasznalokGet jó....
+FelhasznaloGet jó.....
+FelhasznalokSzamaGet jó adminnal
+FelhasznaloPut auth nélkül megfogva....felhasználóval megfogva,adminnal végrehajtotta
+FelhasznaloPost auth nélkül megfogva, felhasználóval megfova, adminnal bement
+FelhasznaloDelete auth nélkül  megfogva, felhasználóval megfogva adminnal csak olyan törölhető aminek nincs fogása Fogások táblánál a DELETE CASCADE -nak kell lennie!!!!! akkor törli a felhasználó törlésével a felhasználó rekordjait is, helyszínnél az update, szerelpkoroknél is az update kell hogy cascade legyen az esetleges változások miatt hogy végrehajtsa majd....fogás update cascade kell-e?
+
+Fogások:
+FogasokGet 0/111111 jó auth nélkül...
+Fogasok/fogasGet(2 id) egy fogás lekérése működik....
+FogasPut(2 id) adminnal működik, sima felhasználóval nem működik, auth nélkül nem működik
+FogasokPost bement gond nélkül másodikat már nem engedte bemenni....
+FogasokDelete adminnal törlés sikeres....admin nélkül vagy sima felhasználóval nem töröl
+Kifogotthal_szamaGet auth nélkül nem megy, adminnal lejön, felhasználóval nem jó
+Kifogotthal_súlyaGet auth nélkül nem megy, adminnal lejön, felhasználóval nem jó
+Leggyakrabban_kifogott_halfaj aut nélkül nem jó, adminnal megy, felhasználóval nem jó
+
+
+Helyszínek:
+HelyszinekGet lejön auth nélkül és admin belépéssel is
+HelyszinGet lejön auth nélkül és az admin belépéssel is
+HelyszinekPut név átírása sikeres admin belépéssel, néküle megfogja a requestet
+HelyszinPost új beadása új névvel és kóddal id nélkül  auth nélkül nem jó, de admin belépéssel bemegy
+HelyszinDelete auth nélkül au újat nem törölte id alapján de admin belépéssel kitörölte
+
+Szerepkörök:
+SzerepkorokGet lejön auth nélkül is
+SzerepkorGet lejön auth nélkül is
+SzerepkorokPut auth nélkül nem nevezi át a 2 es id-t de admin authal már beveszi
+SzerepkorokPost auth nélkül nem veszi fel az újat, de adminnal igen id increment
+SzerepkorokDelete auth nélkül nem fogadja el, admin belépéssel törli az id alapján

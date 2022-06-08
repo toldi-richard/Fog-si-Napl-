@@ -1,0 +1,16 @@
+.justify
+{
+    text-align: justify;
+}
+
+.loader
+{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h3,h4 {
+    margin: 3px 0px !important;
+}

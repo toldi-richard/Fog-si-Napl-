@@ -1,0 +1,58 @@
+.DetailsCard {
+    box-shadow: 6px 5px 12px -2px rgba(0,0,0,0.62);
+    border-radius: 15px;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    width: 150px !important;
+    padding: 10px;
+    margin: 0 auto 15px;
+    background: rgb(2,0,36);
+background: linear-gradient(196deg, rgba(2,0,36,1) 0%, rgba(67,124,215,0.3060574571625525) 0%, rgba(28,78,161,1) 0%, rgba(122,81,172,1) 100%, rgba(38,38,47,1) 100%, rgba(133,133,133,1) 100%);
+}
+
+
+b {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.BackButton{
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-family:'Montserrat', sans-serif !important;
+    border-radius: 0px !important;
+}
+
+.Footer{
+    height: 7%;
+    border-radius: 0px !important;
+}
+
+.DetailIcon {
+    border-radius: 0px !important;
+    padding: 10px;
+    font-size: 5rem;
+    color: white;
+}
+
+.DetailsContainer{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+}
+
+.detailSpan{
+    color: white;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&family=Risque&display=swap');
+
+

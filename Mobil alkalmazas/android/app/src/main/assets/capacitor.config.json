@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "fogasi_naplo",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

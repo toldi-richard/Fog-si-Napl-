@@ -1,0 +1,823 @@
+{
+	"info": {
+		"_postman_id": "da23b7a8-9467-499a-a15a-8a1e0ec1eef2",
+		"name": "Fogasi naplo WebAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FelhasznalokGet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}Felhasznalok",
+					"host": [
+						"{{localhost}}Felhasznalok"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FelhasznaloGet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}Felhasznalok/111111",
+					"host": [
+						"{{localhost}}Felhasznalok"
+					],
+					"path": [
+						"111111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Felhasznalo/GuardGet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}Felhasznalok/111111",
+					"host": [
+						"{{localhost}}Felhasznalok"
+					],
+					"path": [
+						"111111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FelhasznaloGetEmail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}Felhasznalok/111111",
+					"host": [
+						"{{localhost}}Felhasznalok"
+					],
+					"path": [
+						"111111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FelhasznaloPut",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"azonosito\": 111111,\r\n    \"szerepkorID\": 3,\r\n    \"jelszo\": \"$2a$11$Mj7LAwxcw2SXrhBbUvkfT.MXPbJKwCUmrh1R0vlr7PZ.ffq4epLzS\",\r\n    \"email_cim\": \"Jancsika@gmail.com\",\r\n    \"szerepkor\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}Felhasznalok/111111",
+					"host": [
+						"{{localhost}}Felhasznalok"
+					],
+					"path": [
+						"111111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FelhasznaloPost",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"azonosito\": 111199,\r\n    \"szerepkorID\": 3,\r\n    \"jelszo\": \"alma\",\r\n    \"email_cim\": \"almika@gmail.com\",\r\n    \"szerepkor\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}Felhasznalok",
+					"host": [
+						"{{localhost}}Felhasznalok"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FelhasznaloPost Halor",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"azonosito\": 111199,\r\n    \"szerepkorID\": 3,\r\n    \"jelszo\": \"alma\",\r\n    \"email_cim\": \"almika@gmail.com\",\r\n    \"szerepkor\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}Felhasznalok",
+					"host": [
+						"{{localhost}}Felhasznalok"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FelhasznaloDelete",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}Felhasznalok/111111",
+					"host": [
+						"{{localhost}}Felhasznalok"
+					],
+					"path": [
+						"111111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FogasokGet(0)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fogasID\": 2,\r\n    \"azonosito\": 111111,\r\n    \"helyszinID\": 1,\r\n    \"horgaszhely\": null,\r\n    \"datum_idopont\": \"2021-11-26T14:45:00\",\r\n    \"halfaj\": \"széles kárász\",\r\n    \"suly\": 11,\r\n    \"azonositoNavigation\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}Fogasok/0",
+					"host": [
+						"{{localhost}}Fogasok"
+					],
+					"path": [
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FogasokGet(azonosito)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}Fogasok/111111",
+					"host": [
+						"{{localhost}}Fogasok"
+					],
+					"path": [
+						"111111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FogasokFogasGet",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}Fogasok/fogas/2",
+					"host": [
+						"{{localhost}}Fogasok"
+					],
+					"path": [
+						"fogas",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FogasokPut",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fogasID\": 2,\r\n    \"azonosito\": 111111,\r\n    \"helyszinID\": 1,\r\n    \"horgaszhely\": null,\r\n    \"datum_idopont\": \"2021-11-26T14:45:00\",\r\n    \"halfaj\": \"széles kárász\",\r\n    \"suly\": 20,\r\n    \"azonositoNavigation\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}Fogasok/2",
+					"host": [
+						"{{localhost}}Fogasok"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FogasokPost",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"azonosito\": 111111,\r\n    \"helyszinID\": 3,\r\n    \"horgaszhely\": null,\r\n    \"datum_idopont\": \"2022-11-26T14:45:00\",\r\n    \"halfaj\": \"ponty\",\r\n    \"suly\": 3.5,\r\n    \"azonositoNavigation\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}Fogasok",
+					"host": [
+						"{{localhost}}Fogasok"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FogasokDelete",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}Fogasok/93",
+					"host": [
+						"{{localhost}}Fogasok"
+					],
+					"path": [
+						"93"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "KIfogotthalakSzámaGet",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}Fogasok/kifogotthal_szama/111111",
+					"host": [
+						"{{localhost}}Fogasok"
+					],
+					"path": [
+						"kifogotthal_szama",
+						"111111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LeggyakrabbanKifogottHalfajtaGet",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}Fogasok/leggyakrabban_kifogott_halfaj/111111",
+					"host": [
+						"{{localhost}}Fogasok"
+					],
+					"path": [
+						"leggyakrabban_kifogott_halfaj",
+						"111111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "KifogotthalsúlyaGet",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}Fogasok/kifogotthal_sulya/111111",
+					"host": [
+						"{{localhost}}Fogasok"
+					],
+					"path": [
+						"kifogotthal_sulya",
+						"111111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HelyszinekGet",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}Helyszinek/3",
+					"host": [
+						"{{localhost}}Helyszinek"
+					],
+					"path": [
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HelyszinGet",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "HelyszinPut",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"helyszinID\": 3,\r\n    \"vizterulet_neve\": \"Valami\",\r\n    \"vizterkod\": 600311\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}Helyszinek/3",
+					"host": [
+						"{{localhost}}Helyszinek"
+					],
+					"path": [
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HelyszinPost",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vizterulet_neve\": \"Akarmi\",\r\n    \"vizterkod\": 600999\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}Helyszinek",
+					"host": [
+						"{{localhost}}Helyszinek"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HelyszinDelete",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vizterulet_neve\": \"Akarmi\",\r\n    \"vizterkod\": 600999\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}Helyszinek/14",
+					"host": [
+						"{{localhost}}Helyszinek"
+					],
+					"path": [
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SzerepkorokGet",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}Szerepkorok",
+					"host": [
+						"{{localhost}}Szerepkorok"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SzerepkorGet",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "SzerepkorPut",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"szerepkorID\": 2,\r\n    \"szerepkor_megnev\": \"valami\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}Szerepkorok/2",
+					"host": [
+						"{{localhost}}Szerepkorok"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SzerepkorPost",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"szerepkor_megnev\": \"kaligula\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}Szerepkorok",
+					"host": [
+						"{{localhost}}Szerepkorok"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SzerepkorDelete",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin1987",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "101010",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"szerepkor_megnev\": \"kaligula\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}Szerepkorok/4",
+					"host": [
+						"{{localhost}}Szerepkorok"
+					],
+					"path": [
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://localhost:5000/api/",
+			"type": "string"
+		}
+	]
+}

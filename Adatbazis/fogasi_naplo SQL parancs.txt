@@ -1,0 +1,174 @@
+1.
+CREATE DATABASE fogasi_naplo CHARACTER SET=utf8mb4 COLLATE utf8mb4_general_ci;
+
+2.
+CREATE TABLE szerepkorok
+(
+    szerepkorID int AUTO_INCREMENT PRIMARY KEY,
+    szerepkor_megnev varchar(20) not null
+);
+
+
+3. DELETE és UPDATE Cascade legyen! - törli a hozzátartozó rekordokat illetve updateli...
+
+CREATE TABLE felhasznalok
+(
+    azonosito int PRIMARY KEY,
+    szerepkorID int not null,
+    jelszo varchar(70) not null,
+    email_cim varchar(50) not null UNIQUE,
+    FOREIGN KEY (szerepkorID) REFERENCES szerepkorok(szerepkorID)
+);
+
+belepes_idopont datetime not null UNIQUE - extra esetleg
+
+
+4.
+CREATE TABLE helyszinek
+(
+    helyszinID int AUTO_INCREMENT PRIMARY KEY,
+    vizterulet_neve varchar(100) not null UNIQUE,
+    vizterkod int not null UNIQUE
+);
+
+5. Be kell állítani a datum_idopontnál, hogy az azonosito,halfaj,suly-tól is függjön, ne lehessen lejelenteni 1 kapást 2x!
+
+CREATE TABLE fogasok
+(
+    fogasID int AUTO_INCREMENT PRIMARY KEY,
+    azonosito int not null,
+    helyszinID int not null,
+    horgaszhely varchar(10),
+    datum_idopont datetime not null UNIQUE,
+    halfaj varchar(15),
+    suly float,
+    FOREIGN KEY (azonosito) REFERENCES felhasznalok(azonosito),
+    FOREIGN KEY (helyszinID) REFERENCES helyszinek(helyszinID)
+);
+
+
+6.
+INSERT INTO `szerepkorok`(`szerepkor_megnev`) 
+VALUES
+("adminisztrátor"),
+("halőr")
+("horgász"),
+
+7.
+INSERT INTO `felhasznalok` (`azonosito`, `szerepkorID`, `jelszo`, `email_cim`) VALUES
+(10000, 1, '$2a$11$qnfhvMa.ONt0LsJJ2Vh0kefY/v5SXY0GpxDnKrblqSDDpBekbP1TO', 'admin@gmail.com'),
+(20000, 2, 'halor1987', 'halor@gmail.com'),
+(111111, 3, '$2a$11$Mj7LAwxcw2SXrhBbUvkfT.MXPbJKwCUmrh1R0vlr7PZ.ffq4epLzS', 'Agoston1@gmail.com'),
+(143299, 3, '$2a$11$sCJ87QuaoBbc6N4yRGigHOzEqnYyYA3OGKGY4jqQp8bpJ52Si20Uy', 'user12@gmail.com'),
+(222222, 3, '$2a$11$FoK3kDz6Z/IuOdKZZznhvOqT9jvX.TlmKPJH2P9/f0SaBUvSnlTTS', 'Klarika22@gmail.com'),
+(312955, 3, '$2a$11$EArp6riKs5g.wLJ2lDt6Web/0lemXOa7YlF.UgpSLz09ouBeTgUVO', 'user5@gmail.com'),
+(333333, 3, '$2a$11$biZMjMmKEd1AA1MRlXQaSu50vWXKvFUCkMfXKC1lTlo8KYRm61EQe', 'janos61@gmail.com'),
+(444444, 3, '$2a$11$Ug/pQzldfRX3AvG2h74LourHb107TeLX3HZtuFCIOWVKrA1GngPF6', 'bazsika98@gmail.com'),
+(567899, 3, '$2a$11$VkZB0UalfA1fTa0D/ADVxuyz38Sea8Zw17CY2p8wvq/hmQsWQ.5ey', 'user13@gmail.com'),
+(662346, 3, '$2a$11$bYBeFv2YXtD0jWgU6tjt0eIHA/Oue8cLi49eeTz.PuZefESps2t8O', 'user6@gmail.com'),
+(774234, 3, '$2a$11$Q/Sad4Wwz.T2h8Lb/83aSu0krjTFDH4Xf3KsOiobnPFkRkMlx0uCi', 'user7@gmail.com'),
+(823988, 3, '$2a$11$A1.f44yfTOMdUvPQDxB7VOfwBHUaAMLWrIlLiztcuKdrt4C0qRKGS', 'user8@gmail.com'),
+(931299, 3, '$2a$11$o895CYxYz.lkKO2ot9PqruAzld0OIjSEwa4otDZw1YCSCe6ZaisIW', 'user9@gmail.com'),
+(947654, 3, '$2a$11$Z4bHYb4cbNRP/GXsgbNjRumqqeipdjSG1gxAMWQoveIUb0cH70lbK', 'user11@gmail.com'),
+(994239, 3, '$2a$11$I9WsjCUdwnSBuzqxzgm/BOVuVGoZhU3cucZ4kJSv5b.ROm8khPaxO', 'user10@gmail.com');
+
+8.
+INSERT INTO `helyszinek`(`helyszinID`, `vizterulet_neve`, `vizterkod`) 
+VALUES
+(1,"Kórógyi csatorna",0600111),
+(2,"Bedegkéri halastó",0600214),
+(3,"Tisza folyó Csongrád megyei szakasza",0600311),
+(4,"Maros folyó ország határtól a tiszáig",0600411),
+(5,"Hármas-Körös folyó a torkolattól a Szelevény községkeleti határánál lévő gátőr-házig",0600511),
+(6,"Csongrádi vízlépcső munkatere",0600611),
+(7,"Gyálai Holt-Tisza (0-12+874 fkm. Szelvény)Lúdvári szivattyúteleptől a szérűskerti zsilipig terjedő szakasza",0600711),
+(8,"Körtvélyesi Holt-Tisza",0600811),
+(9,"Akolszögi Holt-Tisza",0600911),
+(10,"Maty-éri víztározó",0603211),
+(11,"Deszki tavak",0603314),
+(12,"Vértó",0607015),
+(13,"Antal-tó",0604014)
+
+9. Fogások 
+INSERT INTO `fogasok`(`azonosito`, `helyszinID`, `datum_idopont`, `halfaj`, `suly`) 
+VALUES 
+(111111,1,'2021-11-26 14:30',"sügér",3.5),
+(111111,1,'2021-11-26 14:45',"széles kárász",3),
+(111111,1,'2021-11-26 15:11',"sügér",1.5),
+(111111,1,'2021-11-26 16:30',"ponty",4),
+(111111,2,'2021-11-30 09:30',"amur",3.5),
+(111111,2,'2021-11-30 09:45',"harcsa",2.5),
+
+(662346,8,'2021-10-21 08:30',"ponty",2),
+(662346,8,'2021-10-26 08:45',"széles kárász",3.5),
+(662346,9,'2021-11-11 15:11',"ponty",5),
+(662346,9,'2021-11-11 16:30',"ponty",3),
+(662346,9,'2021-11-11 17:30',"márna",1.5),
+(662346,12,'2021-11-18 12:45',"márna",2.5),
+
+(774234,1,'2021-09-21 08:30',"harcsa",2),
+(774234,1,'2021-09-21 08:46',"harcsa",1.5),
+(774234,2,'2021-12-11 07:11',"csuka",4),
+(774234,2,'2021-12-11 07:30',"ponty",3),
+(774234,8,'2021-12-11 13:30',"amur",1.5),
+(774234,8,'2021-12-11 14:45',"amur",1.5),
+
+(312955,1,'2021-02-06 08:30',"csuka",2),
+(312955,1,'2021-02-06 08:45',"ponty",2.5),
+(312955,2,'2021-05-10 07:11',"csuka",3),
+(312955,2,'2021-05-10 09:30',"ponty",2),
+(312955,9,'2021-08-25 13:30',"amur",1),
+(312955,9,'2021-08-25 14:45',"amur",4),
+
+(444444,12,'2021-02-03 08:30',"csuka",2),
+(444444,12,'2021-02-03 10:45',"ponty",1.5),
+(444444,11,'2021-05-10 12:11',"csuka",3),
+(444444,8,'2021-07-15 13:32',"ponty",1.5),
+(444444,9,'2021-08-11 13:30',"amur",2),
+(444444,12,'2021-09-21 14:51',"amur",3),
+
+(222222,2,'2021-03-02 08:30',"harcsa",3),
+(222222,2,'2021-03-02 10:45',"ponty",2),
+(222222,2,'2021-03-02 12:11',"csuka",2),
+(222222,8,'2021-07-15 13:30',"ponty",4),
+(222222,8,'2021-07-15 13:35',"csuka",3),
+(222222,9,'2021-09-21 14:48',"csuka",2)
+
+10. fogások horgászhelyekkel
+INSERT INTO `fogasok`(`azonosito`, `horgaszhely`, `helyszinID`, `datum_idopont`, `halfaj`, `suly`) 
+VALUES 
+
+(111111,3,1,'2021-10-26 14:30',"sügér",3),
+(111111,3,1,'2021-10-26 14:45',"széles kárász",2.5),
+(111111,3,2,'2021-10-26 15:11',"sügér",2),
+(111111,3,2,'2021-10-26 16:30',"ponty",1),
+(111111,4,1,'2021-08-30 12:30',"amur",1),
+(111111,4,1,'2021-05-23 12:45',"harcsa",1.5),
+
+(333333,3,2,'2021-05-26 12:30',"sügér",2.5),
+(333333,3,2,'2021-05-26 12:45',"széles kárász",4),
+(333333,6,1,'2021-08-26 13:11',"sügér",3),
+(333333,6,1,'2021-08-26 16:30',"ponty",3),
+(333333,4,3,'2021-09-30 14:30',"sügér",2),
+(333333,4,3,'2021-09-23 14:45',"ponty",2),
+
+(444444,2,2,'2021-06-03 09:30',"csuka",2),
+(444444,2,1,'2021-06-03 11:45',"ponty",3),
+(444444,4,3,'2021-06-10 12:11',"csuka",1),
+(444444,4,2,'2021-06-15 12:32',"ponty",1.5),
+(444444,4,2,'2021-06-15 12:35',"harcsa",2),
+(444444,4,6,'2021-06-21 13:45',"amur",3),
+
+(222222,3,1,'2021-05-04 08:35',"harcsa",4),
+(222222,3,1,'2021-05-04 09:47',"ponty",2),
+(222222,3,2,'2021-05-04 11:18',"csuka",4),
+(222222,1,2,'2021-06-15 14:33',"ponty",3),
+(222222,1,3,'2021-06-15 14:39',"márna",2),
+(222222,4,5,'2021-08-21 15:43',"csuka",1),
+
+(662346,4,3,'2021-06-21 08:30',"ponty",2),
+(662346,4,2,'2021-07-26 08:45',"széles kárász",2.5),
+(662346,2,2,'2021-08-11 15:11',"ponty",3.5),
+(662346,2,3,'2021-08-11 16:30',"ponty",3),
+(662346,2,2,'2021-08-11 17:30',"csuka",2.5),
+(662346,3,3,'2021-09-18 12:45',"márna",2)

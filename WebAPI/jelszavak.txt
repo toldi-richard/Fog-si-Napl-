@@ -1,0 +1,31 @@
+(101010, 1, 'admin1987', 'admin@gmail.com'),
+(111111, 3, 'Agoston21', 'Agoston1@gmail.com'),
+(143299, 3, 'ADA912jja12..', 'user12@gmail.com'),
+(222222, 3, 'Klarika12', 'Klarika22@gmail.com'),
+(312955, 3, 'ufsa5dwf21', 'user5@gmail.com'),
+(333333, 3, 'Jancsika1220', 'janos61@gmail.com'),
+(444444, 3, 'balazs1230', 'bazsika98@gmail.com'),
+(567899, 3, 'DA..23ADaad2cafA13*_', 'user13@gmail.com'),
+(662346, 3, 'uafr6awwd', 'user6@gmail.com'),
+(774234, 3, 'dader7ADF.._', 'user7@gmail.com'),
+(823988, 3, 'uasdr8dssg', 'user8@gmail.com'),
+(931299, 3, 'u34Ar9dsg', 'user9@gmail.com'),
+(947654, 3, 'ASDer1165', 'user11@gmail.com'),
+(994239, 3, 'uad10amsk', 'user10@gmail.com');
+
+
+(101010, 1, '$2a$11$qnfhvMa.ONt0LsJJ2Vh0kefY/v5SXY0GpxDnKrblqSDDpBekbP1TO', 'admin@gmail.com'),
+(111111, 3, '$2a$11$Mj7LAwxcw2SXrhBbUvkfT.MXPbJKwCUmrh1R0vlr7PZ.ffq4epLzS', 'Agoston1@gmail.com'),
+(143299, 3, '$2a$11$sCJ87QuaoBbc6N4yRGigHOzEqnYyYA3OGKGY4jqQp8bpJ52Si20Uy', 'user12@gmail.com'),
+(222222, 3, '$2a$11$FoK3kDz6Z/IuOdKZZznhvOqT9jvX.TlmKPJH2P9/f0SaBUvSnlTTS', 'Klarika22@gmail.com'),
+(312955, 3, '$2a$11$EArp6riKs5g.wLJ2lDt6Web/0lemXOa7YlF.UgpSLz09ouBeTgUVO', 'user5@gmail.com'),
+(333333, 3, '$2a$11$biZMjMmKEd1AA1MRlXQaSu50vWXKvFUCkMfXKC1lTlo8KYRm61EQe', 'janos61@gmail.com'),
+(444444, 3, '$2a$11$Ug/pQzldfRX3AvG2h74LourHb107TeLX3HZtuFCIOWVKrA1GngPF6', 'bazsika98@gmail.com'),
+(567899, 3, '$2a$11$VkZB0UalfA1fTa0D/ADVxuyz38Sea8Zw17CY2p8wvq/hmQsWQ.5ey', 'user13@gmail.com'),
+(662346, 3, '$2a$11$bYBeFv2YXtD0jWgU6tjt0eIHA/Oue8cLi49eeTz.PuZefESps2t8O', 'user6@gmail.com'),
+(774234, 3, '$2a$11$Q/Sad4Wwz.T2h8Lb/83aSu0krjTFDH4Xf3KsOiobnPFkRkMlx0uCi', 'user7@gmail.com'),
+(823988, 3, '$2a$11$A1.f44yfTOMdUvPQDxB7VOfwBHUaAMLWrIlLiztcuKdrt4C0qRKGS', 'user8@gmail.com'),
+(931299, 3, '$2a$11$o895CYxYz.lkKO2ot9PqruAzld0OIjSEwa4otDZw1YCSCe6ZaisIW', 'user9@gmail.com'),
+(947654, 3, '$2a$11$Z4bHYb4cbNRP/GXsgbNjRumqqeipdjSG1gxAMWQoveIUb0cH70lbK', 'user11@gmail.com'),
+(994239, 3, '$2a$11$I9WsjCUdwnSBuzqxzgm/BOVuVGoZhU3cucZ4kJSv5b.ROm8khPaxO', 'user10@gmail.com');
+

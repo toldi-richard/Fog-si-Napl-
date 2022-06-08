@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Risque&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&family=Risque&display=swap');
+
+.MenuButtons{
+    position: sticky;
+    border-radius: 35px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    
+}
+
+.menuTitle {
+    font-size: 2rem !important;
+    font-weight: bolder;
+    font-family: 'Montserrat', sans-serif !important;
+    text-align: justify;
+}
+
+.menuItem {
+    font-size: 1.8rem !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.Menu {
+    opacity: 95%;
+    border-radius: 0px !important;
+}
+
+.Icon {
+    border-radius: 0px !important;
+}
+
+.PersonAvatar{
+    margin-left: 65px;
+    width: 50%;
+}
+
+span{
+    padding: 20px;
+}

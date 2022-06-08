@@ -1,0 +1,16 @@
+Teszt: 85x
+Mobil: 76x
+Megy: 74x
+Weboldal: 68x
+Projekt: 65x
+Fut: 65x
+Webapi: 61x
+Tesztelni: 60x
+Felraktam: 54x
+Git: 53x
+Github: 49x
+Doksi: 48x
+Pusholtam: 47x
+Gomb: 26x
+Baj: 23x
+

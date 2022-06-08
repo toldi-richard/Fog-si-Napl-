@@ -1,0 +1,22 @@
+npm run build
+
+ionic capacitor add android
+
+ionic capacitor copy android
+
+ionic cap open android
+
+
+androidmanifest.xml-be application-hoz:
+
+android:usesCleartextTraffic="true"
+
+
+// local
+export const localhost = "http://localhost:5000/api/";
+
+// production Suliban: http://10.0.2.2:5000/api/
+const production = "http://127.0.0.1:5000/api/";
+
+// production or stage
+export const baseURL: string = process.env.NODE_ENV === "production" ?  production : localhost;

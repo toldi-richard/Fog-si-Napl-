@@ -1,0 +1,125 @@
+* {
+    border-radius: 10px;
+}
+
+
+.block {
+    border-radius: 20px;
+    padding: 10px;
+    min-height: 100vh;
+    /*box-shadow: 0 400px 0 -100px rgb(75, 164, 224) inset;*/
+}
+
+.shape {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-image: url(https://www.pngkit.com/png/full/150-1505858_blue-line-curve-png.png);
+    background-size: 100% 300px;
+  }
+  
+  .content { 
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .shape:before {
+    position: absolute;
+    width: 100%;
+    content: "";
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 1) 50%, transparent 50%);
+  }
+
+
+.background{
+    background-size: cover;
+    min-height: 100vh;
+}
+
+h1{
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+	font-size: 3rem;
+	text-transform: uppercase;
+    margin-top: 3rem;
+	margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bolder;
+}
+
+h3{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.List {
+    border-radius: 15px;
+    box-shadow: 6px 10px 10px -px rgba(0,0,0,0.62);
+    padding: 0px !important;
+    opacity: 70%;
+    margin-top: 20px;
+}
+
+.loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+p{
+    margin-left: 20px;
+    font-family:'Montserrat', sans-serif;
+    font-size: 1.4rem !important;
+}
+
+.ListItem {
+    border-radius: 0px !important;
+}
+
+
+.Icons {
+    margin-top: -11px;
+    font-size: 1.8rem;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.Bold{
+    padding-left: 20px;
+    font-size: 1.4rem;
+}
+
+.Container{
+    display: flex;
+}
+
+.component-icon {
+    border-radius: 50%;
+  
+    padding: 7px;
+    height: 18px;
+    width: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .component-icon-dark {
+    background: var(--ion-color-step-850, #27323e);
+    color: var(--ion-item-background, #fff);
+  }
+
+  .DarkModeToggle{
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: bold;
+    text-align: left;
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Risque&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&family=Risque&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&family=Risque&display=swap');

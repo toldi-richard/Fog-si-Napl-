@@ -1,0 +1,37 @@
+Login:
+Üres - mezők kitöltése kötelező alert - jó
+Email címet validálja
+email bent- jelszó hiányzik - mezők kitöltése kötelező
+email rossz és kamu jelszó - helytelen email cím
+email jó - jelszó kamu -  helytelen jelszó
+
+Admin jó adatokkal belép....
+kilépés működik kilép
+
+agoston és klarika belépése jó
+
+reszponzív a login 320 px szélességig, jó 220ig is mehet
+
+Gomb: ha nincs minden jól kitöltve vagy kitöltve eltűnik, látható ha minden jól ki van töltve ami kötelező, dátumnál ha rosszat ír be ás aztán javítja még nem látszik a gomb, másik mezőnél is kell változtatni...vagy javítani vagy csak cserélni és láthatóvá válik majd....kicsit hibás ez de ez van
+
+Azonosító: 0 vál nem kezdődhet, hibát jelez 6 nál rövidebb több nem lehet, jelez, ha kitörli jelzés eltűnik.... ha minden ki van töltve gomb látszik....
+
+
+Helyszín: gomb eltűnik ha üres (kötelező kitölteni van)
+
+Horgászhely: nem kötelező kitölteni, max 2 szám vagy betű és szám vagy 02 vagy betű / és szám lehet
+B/02 is jó de a /002 már nem
+
+Dátum: korábbi v későbbi napra nem lehet jelenteni, korábbi vagy későbbi órára nem engedi jelenteni, gomb eltűnik és error is jelez
+
+halfaj súly kötelező megadni addig nincs gomb....
+
+confirm oldal helyesen jeleníti meg az adatokat , nem-re kattintva visszalép és módosítható,
+igen gombra katintva alert hogy a regisztrálás sikeres volt és az adatokat le is küldi az adatbázisba....horgászhely ha üres akkor null-ként küldi le az adatbázisba....
+
+Regisztráció:
+Nem email formátum esetén jelez
+Túl gyenge jelszó esetén jelez
+Regisztrált jelszó esetén jelez
+Sikeres regisztráció után a Google Firebase adatbázisban az adatok megjelennek
+Sikeres regisztráció után az alkalmazásba be lehet lépni
